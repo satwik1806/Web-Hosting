@@ -16,5 +16,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Hello ${home}"
-        echo "- in ${name}"
+        echo "Hello ${{inputs.name}}"
+        echo "- in ${{inputs.home}}"
