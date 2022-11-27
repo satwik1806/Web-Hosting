@@ -45,7 +45,8 @@ jobs:
 
     - name: Build and tag image
       run: |-
-        ls
+        sudo apt install tree
+        tree main/
         docker build . --tag "gcr.io/$CLOUD_RUN_PROJECT_ID/$REPO_NAME:$GITHUB_SHA"
     - name: Push image to GCR
       run: |-
