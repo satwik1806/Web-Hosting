@@ -51,7 +51,7 @@ jobs:
       run: |-
         sudo apt install tree
         tree main/
-        docker build ./main -p ${{ inputs.port }} --tag "gcr.io/$CLOUD_RUN_PROJECT_ID/$REPO_NAME:$GITHUB_SHA"
+        docker build ./main --tag "gcr.io/$CLOUD_RUN_PROJECT_ID/$REPO_NAME:$GITHUB_SHA"
     - name: Push image to GCR
       run: |-
         docker push gcr.io/$CLOUD_RUN_PROJECT_ID/$REPO_NAME:$GITHUB_SHA
