@@ -29,6 +29,7 @@ function App() {
   });
 
   const onSubmit = async (data) => {
+    console.log(data);
     fetch('https://api.github.com/repos/satwik1806/Web-Hosting/actions/workflows/workflow.yml/dispatches', {
       method: 'POST',
       headers: {
@@ -36,7 +37,7 @@ function App() {
         'Authorization': 'Bearer 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',
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      body: '{"ref":"main","inputs":{"githubpat":"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","reponame":"guptabhaskar/docker-nextjs"}}'
+      body: JSON.stringify({ref: "main", inputs: {reponame: data.reponame, githubpat: data.githubpat}})
     }).then(()=>{
       setShowText(true);
     })
