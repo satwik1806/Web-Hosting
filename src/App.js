@@ -34,7 +34,7 @@ function App() {
       method: 'POST',
       headers: {
         'Accept': 'application/vnd.github+json',
-        'Authorization': 'Bearer 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',
+        'Authorization': 'Bearer ${add satwik1806 PAT, please contact}',
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       body: JSON.stringify({ref: "main", inputs: {reponame: data.reponame, githubpat: data.githubpat}})
